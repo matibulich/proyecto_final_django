@@ -1,0 +1,28 @@
+{% extends "movie_app/base.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+{% block registro %} Volver {% endblock %}
+
+<div class="content">
+    <h2 class="content-head is-center" >Carga tu pelicula.</h2>
+
+    {% if miFormulario.errors %}
+
+    <p style="color: red;"> Están mal los datos, revisar</p>
+
+    {% endif %}
+    <form action="" method="POST">{% csrf_token %}
+
+       
+        
+        <table>
+            {{ miFormulario.as_table }}
+        </table>
+
+        <input type="submit", value="Guardar">
+
+    </form>
+    
+{% endblock %}
