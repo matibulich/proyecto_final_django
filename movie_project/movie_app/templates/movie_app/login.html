@@ -1,0 +1,38 @@
+{% extends "movie_app/base.html" %}
+
+{% load static %}
+
+
+
+{% block botones_inicio %}
+<div class="botones_inicio">
+    <a href= "{% url 'inicio' %}"  class="pure-button pure-button-primary">  Volver  </a>
+    
+</div>
+
+
+
+
+{% endblock %}
+
+{% block contenidoQueCambia %}
+
+
+<div class="content">
+    <h2 class="content-head is-center">Inicia Sesión</h2>
+
+       <form action="" method="POST">{% csrf_token %}
+
+                
+        <table>
+            {{ form.as_table }}
+        </table>
+
+        <button type="submit"> Iniciar Sesión</button>
+
+    </form>
+    </div>
+
+
+  
+{% endblock %}

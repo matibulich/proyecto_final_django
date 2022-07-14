@@ -6,8 +6,10 @@
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A layout example that shows off a responsive product landing page.">
-    <title>Movie App</title>
+    <meta name="description" content="Con MovieApp podés guardar las series y peliculas que viste para recomendarlas.">
+    <title>Movie App- Carga tus series y peliculas favoritas.</title>
+    <!--Iconos  -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <!--Fuentes de Google   -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,8 +32,8 @@
 
         <ul class="pure-menu-list">
             
-            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Tour</a></li>
-            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Ingresar</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Sobre Mi</a></li>
+            <li class="pure-menu-item"><a  href= "{% url 'login' %}" class="pure-menu-link">Ingresar</a></li>
         </ul>
     </div>
 </div>
@@ -42,44 +44,48 @@
         <p class="splash-subhead">
            Guardá las peliculas que viste y recomendalas a tus amigos!
         </p>
-        <p>
-            <a href="{% url 'formulario_inicio' %}" class="pure-button pure-button-primary"> {% block registro %}Registrate {% endblock %} </a>
-                
-        </p>
+        {% block botones_inicio %}
+        <div class="botones_inicio">
+            <a href= "{% url 'login' %}"  class="pure-button pure-button-primary">  Ingresar  </a>
+            <a href= "{% url 'registro' %}"  class="pure-button pure-button-primary">Registrate</a>
+        </div>
+      
+    {% endblock %}
     </div>
 </div>
 
 <div class="content-wrapper">
     {% block contenidoQueCambia %}
 
+
+
+
     {% endblock %}
-   
-
-
 
             <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
-                <h4>Contactanos</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat.
-                </p>
+                
 
-                <h4>Redes Sociales</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.
-                </p>
+                
+                <h2 style="text-align: center">Redes Sociales</h2>
+                
+                <div class="redes_sociales">
+               <ul>
+                    <i style="font-size: 5em;" class="uil uil-facebook" ></i>
+                    <i style="font-size: 5em;" class="uil uil-instagram-alt"></i>
+                    <i style="font-size: 5em;" class="uil uil-whatsapp-alt"></i>
+                    <i style="font-size: 5em;" class="uil uil-twitter"></i>
+          
+                </ul>
             </div>
-        </div>
+            </div>
+       
 
-    </div>
+   
 
     <div class="footer l-box is-center">
       MOVIE APP ® --- Desarrollado por Matías Bulich --- 2022 
     </div>
-
+</div>
 </div>
 
 </body>

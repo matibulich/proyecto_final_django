@@ -2,3 +2,11 @@
 
 {% load static %}
 
+{% block botones_inicio %}
+<div class="botones_inicio">
+    <a href= "{% url 'login' %}"  class="pure-button pure-button-primary">  Ingresar  </a>
+    <a href= "{% url 'registro' %}"  class="pure-button pure-button-primary">Registrate</a>
+</div>
+<h2>{{mensaje}}</h2>
+{% endblock %}
+

@@ -3,15 +3,19 @@
 {% load static %}
 
 {% block contenidoQueCambia %}
-{% block registro %} Salir {% endblock %}
+<div class="content-head is-center">
+    <h2>Bienvenid@ {{user.first_name}}</h2> 
+</div>   
+    <h2 class="content-head is-center">Empezá a cargar tus peliculas y series favoritas.</h2>
 
-<div class="content">
-    <h2 class="content-head is-center" id="registro">Empezá a cargar tus peliculas y series favoritas.</h2>
 
-
-   <main class ="formularios_peliculas_series"> 
-    
-    <a  href="{% url 'peliculas' %}"><h1>Formulario - Agregar Pelicula</h1> </a>
-    <a  href="{% url 'series' %}"><h1>Formulario - Agregar Serie</h1> </a>
-   </main>
+     
+     
+    <div class="portal">
+    <a class="items_portal"  href="{% url 'peliculas' %}">  Agregar Pelicula </a>
+    <a class="items_portal"  href="{% url 'series' %}"> Agregar Serie </a>
+      
+    </div>      
+        
+ 
 {% endblock %}
