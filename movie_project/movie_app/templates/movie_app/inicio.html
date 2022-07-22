@@ -7,6 +7,19 @@
     <a href= "{% url 'login' %}"  class="pure-button pure-button-primary">  Ingresar  </a>
     <a href= "{% url 'registro' %}"  class="pure-button pure-button-primary">Registrate</a>
 </div>
-<h2>{{mensaje}}</h2>
-{% endblock %}
 
+<p style="color:red">{{mensaje}}<p>
+{% endblock %}
+{% block javascript %}
+{% if messages %}
+    {% for m in messages %}
+        <script>
+            Swal.fire({
+                "title":"Atencion",
+                "text": "{{m}}",
+                "icon": "error"
+               })
+            </script>
+    {% endfor %}
+{% endif %}
+{% endblock %}
